@@ -1,0 +1,38 @@
+{% extends "layout.twig" %}
+
+{% block productshow %}
+
+<a href="/admin/products/index.php" class="btn btn-primary link-warning">Index</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Color</th>
+            <th scope="col">Size</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">{{ item['id'] }}</th>
+            <td>{{ item['name'] }}</td>
+            <td>{{ item['color'] }}</td>
+            <td>{{ item['size'] }}</td>
+            <td>
+                <form class="d-flex" action="/admin\products\edit.php" method="post">
+                    <input value="{{ item['id'] }}" class="form-control me-2" type="hidden" name="id">
+                    <button class="btn btn-outline-warning" type="submit">Edit</button>
+                </form>
+                <form class="d-flex" action="/admin\products\delete.php" method="post">
+                    <input value="{{ item['id'] }}" class="form-control me-2" type="hidden" name="id">
+                    <button class="btn btn-outline-danger" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+{% endblock %}

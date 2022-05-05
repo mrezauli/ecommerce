@@ -1,0 +1,22 @@
+{% extends "layout.twig" %}
+
+{% block productedit %}
+
+<form action="update.php" method="POST">
+    <input value="{{ item['id'] }}" type="hidden" name="id">
+    <div class="form-floating mb-3">
+        <input value="{{ item['name'] }}" name="name" type="text" class="form-control" id="floatingName">
+        <label for="floatingName">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{ item['color'] }}" name="color" type="text" class="form-control" id="floatingColor">
+        <label for="floatingColor">Color</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{ item['size'] }}" name="size" type="text" class="form-control" id="floatingSize">
+        <label for="floatingSize">Size</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

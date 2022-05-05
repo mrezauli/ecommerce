@@ -1,0 +1,14 @@
+{
+    "require-dev": {
+        "pds/skeleton": "^1.0"
+    },
+    "require": {
+        "twig/twig": "^3.3",
+        "illuminate/database": "^9.11"
+    },
+    "autoload": {
+        "classmap": [
+            "models"
+        ]
+    }
+}

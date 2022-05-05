@@ -1,0 +1,20 @@
+{% extends "layout.twig" %}
+
+{% block productindex %}
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-1">
+    {% for item in items %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item['name']}}</h5>
+                    <p class="card-text">{{ item['color']}}</p>
+                    <p class="card-text">{{ item['size']}}</p>
+                    <a href="#" class="btn btn-primary">Order It!</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

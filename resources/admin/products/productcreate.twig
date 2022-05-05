@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block productcreate %}
+
+<form action="store.php" method="POST">
+    <div class="form-floating mb-3">
+        <input name="name" type="text" class="form-control" id="floatingName" placeholder="name@example.com">
+        <label for="floatingName">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="color" type="text" class="form-control" id="floatingColor" placeholder="Password">
+        <label for="floatingColor">Color</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="size" type="text" class="form-control" id="floatingSize" placeholder="Password">
+        <label for="floatingSize">Size</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
