@@ -1,0 +1,26 @@
+{% extends "layout.twig" %}
+
+{% block orderedit %}
+
+<div class="alert alert-success mt-3" role="alert">
+    A <i class="text-primary">{{ item['product']['name'] }}</i> is going to be edited! Check it out!
+    <br/>
+    If you need to edit the product then please delete this order & place a new order with desired product!
+    <br/>
+    ---Thanks
+  </div>
+
+<form action="update.php" method="POST">
+    <input value="{{ item['id'] }}" type="hidden" name="id">
+    <div class="form-floating mb-3">
+        <input value="{{ item['quantity'] }}" name="quantity" type="number" max="10" class="form-control" id="floatingQuantity">
+        <label for="floatingQuantity">Quantity</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input value="{{ item['address'] }}" name="address" type="text" class="form-control" id="floatingAddress">
+        <label for="floatingAddress">Address</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

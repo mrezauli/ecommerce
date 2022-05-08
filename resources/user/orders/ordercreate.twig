@@ -1,0 +1,22 @@
+{% extends "layout.twig" %}
+
+{% block ordercreate %}
+
+<div class="alert alert-success mt-3" role="alert">
+    A <i class="text-primary">{{ item['name'] }}</i> is going to be ordered! Check it out!
+  </div>
+
+<form action="store.php" method="POST">
+        <input name="product_id" value="{{ item['id'] }}" type="hidden">
+    <div class="form-floating mb-3">
+        <input name="quantity" type="number" max="10" class="form-control" id="floatingQuantity">
+        <label for="floatingQuantity">Quantity</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="address" type="text" class="form-control" id="floatingAddress">
+        <label for="floatingAddress">Address</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

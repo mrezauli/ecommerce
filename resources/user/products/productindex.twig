@@ -10,7 +10,10 @@
                     <h5 class="card-title">{{ item['name']}}</h5>
                     <p class="card-text">{{ item['color']}}</p>
                     <p class="card-text">{{ item['size']}}</p>
-                    <a href="#" class="btn btn-primary">Order It!</a>
+                    <form class="d-flex" action="/user/orders/create.php" method="post">
+                        <input value="{{ item['id'] }}" class="form-control me-2" type="hidden" name="id">
+                        <button class="btn btn-success btn-primary-success" type="submit">Order It!</button>
+                    </form>
                 </div>
             </div>
         </div>
