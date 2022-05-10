@@ -1,0 +1,42 @@
+{% extends "layout.twig" %}
+
+{% block orderindex %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <th scope="row">{{ item['id'] }}</th>
+            <td>{{ item['product']['name'] }}</td>
+            <td>{{ item['quantity'] }}</td>
+            <td>{{ item['address'] }}</td>
+            <td>
+                <form class="d-flex" action="/customer\orders\show.php" method="post">
+                    <input value="{{ item['id'] }}" class="form-control me-2" type="hidden" name="id">
+                    <button class="btn btn-outline-success" type="submit">View</button>
+                </form>
+                <form class="d-flex" action="/customer\orders\edit.php" method="post">
+                    <input value="{{ item['id'] }}" class="form-control me-2" type="hidden" name="id">
+                    <button class="btn btn-outline-warning" type="submit">Edit</button>
+                </form>
+                <form class="d-flex" action="/customer\orders\delete.php" method="post">
+                    <input value="{{ item['id'] }}" class="form-control me-2" type="hidden" name="id">
+                    <button class="btn btn-outline-danger" type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+{% endblock %}

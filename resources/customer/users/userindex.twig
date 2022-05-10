@@ -1,0 +1,34 @@
+{% extends "layout.twig" %}
+
+{% block userindex %}
+
+{% if user['unauthorizedAccess'] %}
+    <div class="alert alert-warning" role="alert">
+        You're tried to access unauthorized area!
+    </div>
+{% endif %}
+
+{% if user['isLoggedIn'] %}
+    <div class="alert alert-warning" role="alert">
+        <div class="alert alert-success" role="alert">
+            You're loggedin!
+        </div>
+    </div>
+{% endif %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ user['name'] }}</td>
+            <td>{{ user['email'] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

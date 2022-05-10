@@ -12,12 +12,21 @@
           <li class="nav-item">
             <a class="nav-link" href="/customer\orders\index.php">Orders</a>
           </li>
+          {% if user['isLoggedIn'] %}
           <li class="nav-item">
-            <a class="nav-link" href="/customer\users\create.php">Sign Up</a>
+            <a class="nav-link" href="/customer\users\index.php">Users</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/customer\users\show.php">Sign In</a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/customer\users\signout.php">Sign Out</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/customer\users\create.php">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/customer\users\show.php">Sign In</a>
+            </li>
+          {% endif %}
         </ul>
       </div>
     </div>

@@ -1,10 +1,11 @@
 Tables should need
 
-Users [Admin, Customer]
+Users [Seller, Customer]
 -id
 -email
 -password
 -name
+-isSeller
 
 Products
 -id
@@ -24,3 +25,14 @@ Orders hasOne[belongsTo] Products
 Dependency:
 Twig-> Templating Engine
 Eloquent-> for database operation, ORM
+
+Authentication: user info
+Authorization: permission info / check
+
+Authentication: users CRUD/BREAD
+sign in
+sign up
+Create/Add: 
+Read/BrowseRead: 
+Update/Edit:
+Delete/Delete:
