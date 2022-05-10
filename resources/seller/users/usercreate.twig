@@ -1,0 +1,21 @@
+{% extends "layout.twig" %}
+
+{% block usercreate %}
+
+<form action="store.php" method="POST">
+    <div class="form-floating mb-3">
+        <input name="name" type="text" class="form-control" id="floatingName">
+        <label for="floatingName">Name</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="email" type="email" class="form-control" id="floatingEmail">
+        <label for="floatingEmail">Email</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input name="password" type="password" class="form-control" id="floatingPassword">
+        <label for="floatingPassword">Password</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+
+{% endblock %}
